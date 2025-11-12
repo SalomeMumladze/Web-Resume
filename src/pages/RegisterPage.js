@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography } from "antd";
+import { Button, Typography, notification } from "antd";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import mail from "../assets/mail.svg";
@@ -22,93 +22,116 @@ const signUpSchema = Yup.object({
 });
 
 export default function RegisterPage() {
+  const [api, contextHolder] = notification.useNotification();
+
+  const showSuccess = (message) => {
+    api.success({
+      message,
+      duration: 3,
+    });
+  };
+
+  const showError = (message) => {
+    api.error({
+      message,
+      duration: 3,
+    });
+  };
+
   const handleSubmit = (values, { setSubmitting }) => {
     setTimeout(() => {
-      alert(`Account created successfully!`);
+      // Example: if email already exists, show error
+      if (values.email === "test@example.com") {
+        showError("This email is already registered");
+      } else {
+        showSuccess("Account created successfully!");
+      }
       setSubmitting(false);
     }, 1000);
   };
 
   const handleGoogleSignIn = () => {
-    alert("Google sign in functionality would be integrated here");
+    showSuccess("Google sign in functionality would be integrated here");
   };
 
   const initialValues = { email: "", password: "", confirmPassword: "" };
-
   const validationSchema = signUpSchema;
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-      validateOnChange={true}
-      validateOnBlur={true}
-    >
-      {({ isSubmitting }) => (
-        <Form className="space-y-4">
-          <Field
-            name="email"
-            component={FormikInput}
-            placeholder="Mail"
-            size="small"
-            prefix={<img src={mail} className="mr-1" />}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <>
+      {contextHolder}
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+        validateOnChange={true}
+        validateOnBlur={true}
+      >
+        {({ isSubmitting }) => (
+          <Form className="space-y-4">
             <Field
-              name="password"
-              type="password"
+              name="email"
               component={FormikInput}
-              placeholder="Password"
+              placeholder="Mail"
+              size="small"
+              prefix={<img src={mail} className="mr-1" />}
             />
-            <Field
-              name="confirmPassword"
-              type="password"
-              component={FormikInput}
-              placeholder="Confirm password"
-            />
-          </div>
 
-          <Button
-            type="primary"
-            size="large"
-            block
-            htmlType="submit"
-            loading={isSubmitting}
-            className="rounded-lg h-12 bg-mediumBlue text-sm font-normal !mt-6 !mb-2"
-          >
-            Create an account
-          </Button>
-
-          <div className="relative ">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-[#EBEDEF]"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Field
+                name="password"
+                type="password"
+                component={FormikInput}
+                placeholder="Password"
+              />
+              <Field
+                name="confirmPassword"
+                type="password"
+                component={FormikInput}
+                placeholder="Confirm password"
+              />
             </div>
-            <div className="relative flex justify-center text-xs">
-              <span className="px-4 bg-white text-grayishBlue">
-                OR SIGN IN WITH
-              </span>
+
+            <Button
+              type="primary"
+              size="large"
+              block
+              htmlType="submit"
+              loading={isSubmitting}
+              className="rounded-lg h-12 bg-mediumBlue text-sm font-normal !mt-6 !mb-2"
+            >
+              Create an account
+            </Button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-[#EBEDEF]"></div>
+              </div>
+              <div className="relative flex justify-center text-xs">
+                <span className="px-4 bg-white text-grayishBlue">
+                  OR SIGN IN WITH
+                </span>
+              </div>
             </div>
-          </div>
 
-          <Button
-            size="large"
-            icon={<img src={google} />}
-            onClick={handleGoogleSignIn}
-            className="!rounded-xl h-12 font-normal text-sm border-lightBlue !my-6 !shadow-sm w-full"
-          >
-            Continue with Google
-          </Button>
+            <Button
+              size="large"
+              icon={<img src={google} />}
+              onClick={handleGoogleSignIn}
+              className="!rounded-xl h-12 font-normal text-sm border-lightBlue !my-6 !shadow-sm w-full"
+            >
+              Continue with Google
+            </Button>
 
-          <Typography className="text-center text-xs text-grayishBlue !mt-0">
-            By creating an account, you agree to our{" "}
-            <a href="#" className="!text-black font-medium hover:underline">
-              Terms & Services
-            </a>
-          </Typography>
-        </Form>
-      )}
-    </Formik>
+            <Typography className="text-center text-xs text-grayishBlue !mt-0">
+              By creating an account, you agree to our{" "}
+              <a href="#" className="!text-black font-medium hover:underline">
+                Terms & Services
+              </a>
+            </Typography>
+          </Form>
+        )}
+      </Formik>
+    </>
   );
 }
