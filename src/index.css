@@ -4,9 +4,14 @@
 
 @font-face {
   font-family: "SfProBlackItalic";
-  src: url("./styles/fonts/SF-Pro-Black-Italic.OTF") format("woff");
+  src: url("./assets/fonts/SF-Pro-Black-Italic.OTF") format("woff");
 }
 @font-face {
   font-family: "SfProRegular";
-  src: url("./styles/fonts/SF-Pro-Regular.OTF") format("woff");
+  src: url("./assets/fonts/SF-Pro-Regular.OTF") format("woff");
+}
+
+.ant-table-cell::before {
+  display: none !important;
+  content: none !important;
 }

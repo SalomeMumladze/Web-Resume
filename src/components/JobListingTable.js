@@ -12,7 +12,7 @@ const dataSource = Array.from({ length: 10 }).map((_, i) => ({
   deadline: { from: "20/02/2025", to: "20/05/2025" },
 }));
 
-const VacanciesTable = () => {
+const JobListingTable = () => {
   const columns = [
     {
       title: (
@@ -102,4 +102,4 @@ const VacanciesTable = () => {
     </div>
   );
 };
-export default VacanciesTable;
+export default JobListingTable;
