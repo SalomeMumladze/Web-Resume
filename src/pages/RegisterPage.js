@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Input, Typography } from "antd";
+import React from "react";
+import { Button, Typography } from "antd";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import mail from "../assets/mail.svg";

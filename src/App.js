@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AccountPage from "./pages/AccountPage";
 // import RegisterPage from "./pages/RegisterPage";
-// import SetupPage from "./pages/SetupPage";
+import SetupPage from "./pages/SetupPage";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<AccountPage />} />
-          {/* <Route path="/register" element={<RegisterPage />} />
-            <Route path="/setup" element={<SetupPage />} /> */}
+          {/* <Route path="/register" element={<RegisterPage />} /> */}
+          <Route path="/setup" element={<SetupPage />} />
         </Routes>
       </Router>
     </ConfigProvider>
