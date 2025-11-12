@@ -17,6 +17,7 @@ module.exports = {
         lightPastelBlue: "#EFF6FD",
         grayishBlue: "#8F96A3",
         dark: "#29303D",
+        mediumBlue: "#2178DE",
       },
       fontFamily: {
         SfProBlackItalic: ["SfProBlackItalic"],

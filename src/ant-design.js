@@ -9,5 +9,12 @@ export const antdOverride = {
     Table: {
       headerColor: "#717680",
     },
+    Segmented: {
+      itemActiveBg: "#717680",
+      trackBg: "#EBEDEF",
+      itemSelectedColor: "#8F96A3",
+      itemColor: "#8F96A3",
+      trackPadding: 4,
+    },
   },
 };

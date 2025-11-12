@@ -25,7 +25,7 @@ function HomePage() {
   const menu = <Menu items={items} />;
 
   return (
-    <>
+    <div className="container md:px-0 px-4 mb-6">
       <div className="sm:h-24 h-32 mb-2">
         <div className="fixed z-50 container md:top-4 top-0  right-0 left-0 bg-lightGray p-4 text-center border border-solid border-lightBlue sm:h-16 md:rounded-[20px]">
           <div className="items-center h-full justify-between sm:flex grid grid-cols-2 gap-2">
@@ -118,7 +118,7 @@ function HomePage() {
         </Typography>{" "}
         <JobListingTable />
       </div>
-    </>
+    </div>
   );
 }
 

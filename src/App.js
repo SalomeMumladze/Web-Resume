@@ -1,14 +1,23 @@
 import "./index.css";
 import { ConfigProvider } from "antd";
 import { antdOverride } from "./ant-design";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import AccountPage from "./pages/AccountPage";
+// import RegisterPage from "./pages/RegisterPage";
+// import SetupPage from "./pages/SetupPage";
 
 function App() {
   return (
     <ConfigProvider theme={antdOverride}>
-      <div className="container md:px-0 px-4 mb-6">
-        <HomePage />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<AccountPage />} />
+          {/* <Route path="/register" element={<RegisterPage />} />
+            <Route path="/setup" element={<SetupPage />} /> */}
+        </Routes>
+      </Router>
     </ConfigProvider>
   );
 }

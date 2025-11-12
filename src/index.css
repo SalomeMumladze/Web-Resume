@@ -15,3 +15,24 @@
   display: none !important;
   content: none !important;
 }
+.ant-input-outlined {
+  border: 1px solid rgba(235, 237, 239, 1);
+}
+
+input::placeholder {
+  color: rgba(143, 150, 163, 1) !important;
+  font-size: 12px;
+}
+
+.ant-segmented-group {
+  height: 100%;
+}
+
+.ant-segmented.ant-segmented-lg .ant-segmented-item-label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  padding: 0px 15px !important;
+}
