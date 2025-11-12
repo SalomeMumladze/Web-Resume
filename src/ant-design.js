@@ -6,5 +6,8 @@ export const antdOverride = {
       itemSelectedColor: "#3F8AE2",
       itemPaddingInline: 12,
     },
+    Table: {
+      headerColor: "#717680",
+    },
   },
 };
