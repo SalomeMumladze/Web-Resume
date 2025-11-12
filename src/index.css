@@ -60,3 +60,7 @@ input::placeholder {
 .ant-checkbox .ant-checkbox-inner {
   border-radius: 90px;
 }
+
+.ant-upload-wrapper .ant-upload-select {
+  width: 100%;
+}

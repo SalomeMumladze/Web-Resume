@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Select, Input, Space } from "antd";
 import { countries } from "./countries";
 
-export default function CountrySelect() {
+export default function CountrySelect({ onChange }) {
   const [value, setValue] = useState("ge");
 
   const selectedCountry = countries.find((c) => c.code === value);
@@ -22,11 +22,16 @@ export default function CountrySelect() {
     ),
   }));
 
+  const handleCodeChange = (value) => {
+    setValue(value);
+    onChange();
+  };
+
   return (
     <Space.Compact className="w-full h-12">
       <Select
         value={value}
-        onChange={setValue}
+        onChange={handleCodeChange}
         options={dropdownItems}
         className="h-12 shadow-sm rounded-xl"
         dropdownMatchSelectWidth={200}
