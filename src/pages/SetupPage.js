@@ -8,11 +8,11 @@ import {
   notification,
 } from "antd";
 import { Formik, Form, Field } from "formik";
-import bgImage from "../assets/bg-image.svg";
-import logo from "../assets/logo.svg";
-import FormikInput from "../components/FormikInput";
+import bgImage from "assets/bg-image.svg";
+import logo from "assets/logo.svg";
+import FormikInput from "components/FormikInput";
 import * as Yup from "yup";
-import CountrySelect from "../components/CountrySelect";
+import CountrySelect from "components/CountrySelect";
 
 export default function SetupPage() {
   const [checked, setChecked] = useState("hidden");

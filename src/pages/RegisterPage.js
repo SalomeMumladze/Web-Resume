@@ -2,9 +2,9 @@ import React from "react";
 import { Button, Typography, notification } from "antd";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import mail from "../assets/mail.svg";
-import google from "../assets/google.svg";
-import FormikInput from "../components/FormikInput";
+import mail from "assets/mail.svg";
+import google from "assets/google.svg";
+import FormikInput from "components/FormikInput";
 
 const signUpSchema = Yup.object({
   email: Yup.string()

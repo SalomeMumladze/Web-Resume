@@ -1,6 +1,6 @@
 import { Table, Space, Typography, Button } from "antd";
 import { StarOutlined } from "@ant-design/icons";
-import companyLogo from "../assets/company-logo.svg";
+import companyLogo from "assets/company-logo.svg";
 
 const { Text, Link } = Typography;
 

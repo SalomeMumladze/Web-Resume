@@ -2,9 +2,9 @@ import "./index.css";
 import { ConfigProvider } from "antd";
 import { antdOverride } from "./ant-design";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import AccountPage from "./pages/AccountPage";
-import SetupPage from "./pages/SetupPage";
+import HomePage from "pages/HomePage";
+import AccountPage from "pages/AccountPage";
+import SetupPage from "pages/SetupPage";
 
 function App() {
   return (

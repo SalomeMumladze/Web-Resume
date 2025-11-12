@@ -1,7 +1,7 @@
 import React, { act, useState } from "react";
 import { Segmented } from "antd";
-import bgImage from "../assets/bg-image.svg";
-import logo from "../assets/logo.svg";
+import bgImage from "assets/bg-image.svg";
+import logo from "assets/logo.svg";
 import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
 

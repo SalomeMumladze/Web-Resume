@@ -1,10 +1,10 @@
 import { Button, Flex, Typography, Menu, Dropdown } from "antd";
-import arrowIcon from "../assets/arrow.svg";
-import companyLogo from "../assets/company-logo.svg";
-import link from "../assets/link.svg";
+import arrowIcon from "assets/arrow.svg";
+import companyLogo from "assets/company-logo.svg";
+import link from "assets/link.svg";
 import { MenuOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
-import JobListingTable from "../components/JobListingTable";
+import JobListingTable from "components/JobListingTable";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
