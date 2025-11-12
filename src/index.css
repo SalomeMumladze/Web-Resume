@@ -21,7 +21,7 @@
 
 input::placeholder {
   color: rgba(143, 150, 163, 1) !important;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .ant-segmented-group {

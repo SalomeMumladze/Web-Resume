@@ -35,7 +35,7 @@ export default function SetupPage() {
   };
 
   const profileSchema = Yup.object({
-    visible_name: Yup.string()
+    first_name: Yup.string()
       .min(2, "Name must be at least 2 characters")
       .required("Visible name is required"),
     last_name: Yup.string()
@@ -63,7 +63,7 @@ export default function SetupPage() {
     console.log(finalData);
 
     setTimeout(() => {
-      if (values.visible_name.toLowerCase() === "test") {
+      if (values.first_name.toLowerCase() === "test") {
         showError("This name cannot be used");
       } else {
         showSuccess("Account created successfully!");
@@ -73,7 +73,7 @@ export default function SetupPage() {
   };
 
   const initialValues = {
-    visible_name: "",
+    first_name: "",
     last_name: "",
     specialization: "",
     status: "",
@@ -113,18 +113,20 @@ export default function SetupPage() {
               >
                 {({ isSubmitting, setFieldValue }) => (
                   <Form className="space-y-4">
-                    <Field
-                      name="visible_name"
-                      component={FormikInput}
-                      placeholder="Visible name"
-                      size="large"
-                    />
-                    <Field
-                      size="large"
-                      name="last_name"
-                      component={FormikInput}
-                      placeholder="Last name"
-                    />
+                    <div className="gap-4 sm:grid-cols-2 grid-cols-1 grid item-center">
+                      <Field
+                        name="first_name"
+                        component={FormikInput}
+                        placeholder="First name"
+                        size="large"
+                      />
+                      <Field
+                        size="large"
+                        name="last_name"
+                        component={FormikInput}
+                        placeholder="Last name"
+                      />
+                    </div>
                     <Field
                       size="large"
                       name="specialization"
