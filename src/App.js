@@ -4,7 +4,6 @@ import { antdOverride } from "./ant-design";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AccountPage from "./pages/AccountPage";
-// import RegisterPage from "./pages/RegisterPage";
 import SetupPage from "./pages/SetupPage";
 
 function App() {
@@ -13,8 +12,14 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<AccountPage />} />
-          {/* <Route path="/register" element={<RegisterPage />} /> */}
+          <Route
+            path="/register"
+            element={<AccountPage defaultActive="register" />}
+          />
+          <Route
+            path="/login"
+            element={<AccountPage defaultActive="login" />}
+          />
           <Route path="/setup" element={<SetupPage />} />
         </Routes>
       </Router>

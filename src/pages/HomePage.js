@@ -5,8 +5,10 @@ import link from "../assets/link.svg";
 import { MenuOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
 import JobListingTable from "../components/JobListingTable";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+  const navigate = useNavigate();
   const items = [
     { key: "home", label: "Home" },
     { key: "vacancies", label: "Vacancies" },
@@ -49,12 +51,14 @@ function HomePage() {
               <Button
                 type="text"
                 className="bg-lightPastelBlue text-brightBlue border border-solid border-pastelBlue rounded-xl sm:w-32 w-full h-[34px]  sm:py-2 sm:px-8"
+                onClick={() => navigate("/login")}
               >
                 Log In
               </Button>
               <Button
                 type="text"
                 className="bg-brightBlue text-white rounded-xl sm:w-32 w-full  h-[34px] sm:py-2 sm:px-8"
+                onClick={() => navigate("/register")}
               >
                 Register
               </Button>

@@ -5,8 +5,8 @@ import logo from "../assets/logo.svg";
 import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
 
-export default function AccountPage() {
-  const [activeTab, setActiveTab] = useState("sign_up");
+export default function AccountPage({ defaultActive }) {
+  const [activeTab, setActiveTab] = useState(defaultActive);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
@@ -26,11 +26,11 @@ export default function AccountPage() {
               options={[
                 {
                   label: "Sign up",
-                  value: "sign_up",
+                  value: "register",
                 },
                 {
                   label: "Sign in",
-                  value: "sign_in",
+                  value: "login",
                 },
               ]}
               size="large"
@@ -40,11 +40,11 @@ export default function AccountPage() {
             />
 
             <h1 className="text-3xl font-bold text-gray-900 my-8">
-              {activeTab === "sign_up"
+              {activeTab === "register"
                 ? "Create an Account"
                 : "Sign into your account"}
             </h1>
-            {activeTab === "sign_up" ? <RegisterPage /> : <LoginPage />}
+            {activeTab === "register" ? <RegisterPage /> : <LoginPage />}
           </div>
         </div>
       </div>
